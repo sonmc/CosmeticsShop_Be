@@ -1,5 +1,4 @@
-﻿using Shop.entities;
-using Shop.entities.Models;
+﻿using Shop.entities; 
 using System.Linq; 
 
 namespace Shop.repositories.RepositoryImpl

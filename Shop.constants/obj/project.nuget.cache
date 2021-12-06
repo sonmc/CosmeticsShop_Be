@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oBDHTVX+eN4pVJSSMPW0MBKwWrFf7mRNhyT/c47RHyNw2Nww/R5V7/UDuNjbnvjBTPhY/HrzycGbHDOcDRpuqA==",
+  "dgSpecHash": "sbWbqKfJ60fgRPCKCUX9U47s/4b6g7W/3IPfH8leRXthQYR5Zt6gMTT1PlEmso4/pv22Ue1TnhQq0NO5dvuL0w==",
   "success": true,
   "projectFilePath": "D:\\ProjectTryHard\\CosmeticsShop\\CosmeticsShop_Be\\Shop.constants\\Shop.constants.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

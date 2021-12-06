@@ -2,8 +2,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Shop.entities;
-using Shop.entities.Models;
+using Shop.entities; 
 using Shop.helpers;
 using Shop.repositories;
 using Shop.repositories.RepositoryImpl;
@@ -51,10 +50,10 @@ namespace Shop.api
                     ValidateAudience = false
                 };
             });
-            services.AddDbContext<DataContext>(option => option.UseSqlServer(appSettings.DefaultConnection, b => b.MigrationsAssembly("quiz.api")));
+            services.AddDbContext<DataContext>(option => option.UseSqlServer(appSettings.DefaultConnection, b => b.MigrationsAssembly("Shop.api")));
             // configure DI for application services
-            services.AddSingleton<IUserService, UserService>();
-            services.AddSingleton<IUserRepository, UserRepositoryImpl>(); 
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepositoryImpl>(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

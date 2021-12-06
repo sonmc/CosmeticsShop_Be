@@ -14,7 +14,13 @@ namespace Shop.entities
         {
         }
         public virtual DbSet<User> Users { get; set; } 
-        public virtual DbSet<Category> Categories { get; set; } 
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Blog> Blogs { get; set; }
+        public virtual DbSet<Comment> Comments { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<Product> Products { get; set; } 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,7 +33,8 @@ namespace Shop.entities
                 new User
                 {
                     Id = 1,
-                    UserName = "Jiang", 
+                    UserName = "Admin",
+                    Password="Letmein9x"
                 }
             );
         }

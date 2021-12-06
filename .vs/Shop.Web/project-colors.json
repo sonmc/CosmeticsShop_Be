@@ -25,7 +25,17 @@
       "ProjectGuid": "7bd08c49-b207-4af4-9049-c659d15ec7e7",
       "DisplayName": "Shop.api",
       "ColorIndex": 3
+    },
+    "a68b2bdb-ff7e-47aa-8342-60b00fc1c067": {
+      "ProjectGuid": "a68b2bdb-ff7e-47aa-8342-60b00fc1c067",
+      "DisplayName": "Shop.entities",
+      "ColorIndex": 4
+    },
+    "82818f02-83de-447f-8f44-33ea763bb2ef": {
+      "ProjectGuid": "82818f02-83de-447f-8f44-33ea763bb2ef",
+      "DisplayName": "Shop.constants",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }
