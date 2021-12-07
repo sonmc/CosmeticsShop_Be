@@ -34,7 +34,11 @@ namespace Shop.entities
                 {
                     Id = 1,
                     UserName = "Admin",
-                    Password="Letmein9x"
+                    Password="Letmein9x",
+                    Email="admin@gmail.com",
+                    Age=30,
+                    Role=1,
+                    Address="Hà nội", 
                 }
             );
         }

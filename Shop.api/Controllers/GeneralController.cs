@@ -12,7 +12,7 @@ namespace Shop.api.Controllers
         private Response response;
 
         public GeneralController(TService service)
-        {
+        { 
             this.service = service;
             response = new Response();
         }

@@ -1,4 +1,4 @@
- 
+
 namespace Shop.api
 {
     public class Program
@@ -12,7 +12,7 @@ namespace Shop.api
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>().UseUrls("http://localhost:4000");
                 });
     }
 }
