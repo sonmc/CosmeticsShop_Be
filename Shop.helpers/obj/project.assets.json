@@ -192,11 +192,22 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "Shop.constants/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Shop.constants.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Shop.constants.dll": {}
+        }
+      },
       "Shop.entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "6.0.0"
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Shop.constants": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Shop.entities.dll": {}
@@ -529,6 +540,11 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Shop.constants/1.0.0": {
+      "type": "project",
+      "path": "../Shop.constants/Shop.constants.csproj",
+      "msbuildProject": "../Shop.constants/Shop.constants.csproj"
     },
     "Shop.entities/1.0.0": {
       "type": "project",

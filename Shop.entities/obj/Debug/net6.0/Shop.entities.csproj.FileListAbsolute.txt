@@ -10,3 +10,6 @@ D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.entities\obj\Debug\net6.0\
 D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.entities\obj\Debug\net6.0\Shop.entities.dll
 D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.entities\obj\Debug\net6.0\ref\Shop.entities.dll
 D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.entities\obj\Debug\net6.0\Shop.entities.pdb
+D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.entities\bin\Debug\net6.0\Shop.constants.dll
+D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.entities\bin\Debug\net6.0\Shop.constants.pdb
+D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.entities\obj\Debug\net6.0\Shop.entities.csproj.CopyComplete

@@ -15,3 +15,5 @@ D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.services\obj\Debug\net6.0\
 D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.services\obj\Debug\net6.0\Shop.services.dll
 D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.services\obj\Debug\net6.0\ref\Shop.services.dll
 D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.services\obj\Debug\net6.0\Shop.services.pdb
+D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.services\bin\Debug\net6.0\Shop.constants.dll
+D:\ProjectTryHard\CosmeticsShop\CosmeticsShop_Be\Shop.services\bin\Debug\net6.0\Shop.constants.pdb

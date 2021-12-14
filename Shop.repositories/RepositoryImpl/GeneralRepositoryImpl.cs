@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 
-
 namespace Shop.repositories.RepositoryImpl
 {
     public abstract class GeneralRepositoryImpl<TEntity, TContext>

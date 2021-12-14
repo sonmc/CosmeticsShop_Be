@@ -1,6 +1,7 @@
-﻿using System; 
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema; 
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Shop.entities
 {
@@ -8,8 +9,8 @@ namespace Shop.entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string IdCategory { get; set; }
+        public int Id { get; set; } 
+        public int CategoryId { get; set; }
         public string NameCategory { get; set; }
         public string NameProduct { get; set; }
         public string Images { get; set; }
@@ -17,13 +18,11 @@ namespace Shop.entities
         public string Description { get; set; }
         public string Link { get; set; }
         public int Evaluate { get; set; }
-        public int Views { get; set; }
         public string IdCode { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
-        public string MetaTitle { get; set; }
-        public long? Status { get; set; }
         public long TotalItems { get; set; } 
-        public virtual OrderDetail OrderDetail { get; set; }
+        public List<Composition> Compositions { get; set; } 
+        public OrderDetail OrderDetail { get; set; }
     }
 }

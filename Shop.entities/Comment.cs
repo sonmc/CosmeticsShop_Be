@@ -9,8 +9,8 @@ namespace Shop.entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Content { get; set; }
-        public int? CustomerId { get; set; }
-        public int? BlogId { get; set; }
+        public int CustomerId { get; set; }
+        public int BlogId { get; set; }
 
     }
 }

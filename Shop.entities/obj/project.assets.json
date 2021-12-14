@@ -191,6 +191,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "Shop.constants/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Shop.constants.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Shop.constants.dll": {}
+        }
       }
     }
   },
@@ -516,11 +526,17 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Shop.constants/1.0.0": {
+      "type": "project",
+      "path": "../Shop.constants/Shop.constants.csproj",
+      "msbuildProject": "../Shop.constants/Shop.constants.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.EntityFrameworkCore >= 6.0.0"
+      "Microsoft.EntityFrameworkCore >= 6.0.0",
+      "Shop.constants >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -549,7 +565,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\ProjectTryHard\\CosmeticsShop\\CosmeticsShop_Be\\Shop.constants\\Shop.constants.csproj": {
+              "projectPath": "D:\\ProjectTryHard\\CosmeticsShop\\CosmeticsShop_Be\\Shop.constants\\Shop.constants.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

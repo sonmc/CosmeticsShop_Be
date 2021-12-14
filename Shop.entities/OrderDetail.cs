@@ -9,10 +9,10 @@ namespace Shop.entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [ForeignKey("Product")]
         public int ProductId { get; set; }
-        public int OrderId { get; set; } 
+        public int OrderId { get; set; }
         public int Quantity { get; set; }
+        [NotMapped]
         public virtual Product Product { get; set; }
     }
 }
