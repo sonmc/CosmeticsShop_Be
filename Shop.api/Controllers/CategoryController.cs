@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Shop.constant;
 using Shop.entities;
-using Shop.helpers;
 using Shop.services;
 
 namespace Shop.api.Controllers
@@ -10,14 +8,12 @@ namespace Shop.api.Controllers
     [Authorize]
     [ApiController]
     [Route("api/categories")]
-    public class CategoryController : GeneralController<Category, ICategoryService> 
-    { 
+    public class CategoryController : GeneralController<Category, ICategoryService>
+    {
+        private ICategoryService _categoryService;
         public CategoryController(ICategoryService categoryService) : base(categoryService)
-        { 
-        }
-        public IActionResult Index()
         {
-            return View();
+            this._categoryService = categoryService;
         }
     }
 }

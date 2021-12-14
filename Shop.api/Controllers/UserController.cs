@@ -7,7 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Options;
 using Shop.services;
 using Shop.constant;
-using Shop.helpers; 
+using Shop.helpers;
 using Shop.entities;
 
 namespace Shop.api.Controllers
@@ -33,7 +33,6 @@ namespace Shop.api.Controllers
         {
             var user = _userService.Login(model.Username, model.Password);
             if (user == null) { return response; }
-               
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
@@ -61,6 +60,6 @@ namespace Shop.api.Controllers
                 response.Message = "Username or Password invalid";
             }
             return response;
-        } 
+        }
     }
 }

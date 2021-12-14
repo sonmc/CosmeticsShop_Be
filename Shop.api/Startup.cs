@@ -52,8 +52,29 @@ namespace Shop.api
             });
             services.AddDbContext<DataContext>(option => option.UseSqlServer(appSettings.DefaultConnection, b => b.MigrationsAssembly("Shop.api")));
             // configure DI for application services
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IUserRepository, UserRepositoryImpl>(); 
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUserRepository, UserRepositoryImpl>();
+
+            services.AddTransient<IBlogService, BlogService>();
+            services.AddTransient<IBlogRepository, BlogRepositoryImpl>();
+
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<ICategoryRepository, CategoryRepositoryImpl>();
+
+            services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IOrderRepository, OrderRepositoryImpl>();
+
+            services.AddTransient<ICompositionService, CompositionService>();
+            services.AddTransient<ICompositionRepository, CompositionRepositoryImpl>();
+
+            services.AddTransient<IOrderDetailService, OrderDetailService>();
+            services.AddTransient<IOrderDetailRepository, OrderDetailRepositoryImpl>();
+
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IProductRepository, ProductRepositoryImpl>(); 
+
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<ICustomerRepository, CustomerRepositoryImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,7 +86,8 @@ namespace Shop.api
             app.UseCors(x => x
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
-                .AllowAnyHeader());
+                .AllowAnyHeader()
+            );
 
             app.UseAuthentication();
             app.UseAuthorization();

@@ -2313,7 +2313,8 @@
       },
       "Shop.entities/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "6.0.0"
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Shop.constants": "1.0.0"
         },
         "runtime": {
           "Shop.entities.dll": {}

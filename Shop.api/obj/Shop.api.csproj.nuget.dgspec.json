@@ -178,7 +178,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\ProjectTryHard\\CosmeticsShop\\CosmeticsShop_Be\\Shop.constants\\Shop.constants.csproj": {
+                "projectPath": "D:\\ProjectTryHard\\CosmeticsShop\\CosmeticsShop_Be\\Shop.constants\\Shop.constants.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
