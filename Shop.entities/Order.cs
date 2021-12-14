@@ -1,7 +1,7 @@
-﻿ 
+﻿
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema; 
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Shop.entities
 {
@@ -13,8 +13,9 @@ namespace Shop.entities
         public string OrderCode { get; set; }
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
-        public string Address { get; set; }
-        public string PhoneNumber { get; set; }
+        public string CustomerAddress { get; set; }
+        public string CustomerPhoneNumber { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
+
     }
 }

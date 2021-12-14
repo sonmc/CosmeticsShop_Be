@@ -139,6 +139,9 @@ namespace Shop.api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -161,7 +164,7 @@ namespace Shop.api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Address")
+                    b.Property<string>("CustomerAddress")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CustomerId")
@@ -170,10 +173,10 @@ namespace Shop.api.Migrations
                     b.Property<string>("CustomerName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OrderCode")
+                    b.Property<string>("CustomerPhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneNumber")
+                    b.Property<string>("OrderCode")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
