@@ -11,7 +11,7 @@ namespace Shop.entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; } 
         public int CategoryId { get; set; }
-        public string NameCategory { get; set; }
+   
         public string NameProduct { get; set; }
         public string Images { get; set; }
         public double? ListedPrice { get; set; }
@@ -21,8 +21,10 @@ namespace Shop.entities
         public string IdCode { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
-        public long TotalItems { get; set; } 
-        public List<Composition> Compositions { get; set; } 
-        public OrderDetail OrderDetail { get; set; }
+        public long TotalItems { get; set; }
+        public bool IsDisabled { get; set; }
+        public List<Composition> Compositions { get; set; }
+        [NotMapped]
+        public string NameCategory { get; set; }
     }
 }

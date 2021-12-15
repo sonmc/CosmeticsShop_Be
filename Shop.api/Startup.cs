@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Shop.entities; 
 using Shop.helpers;
@@ -90,7 +91,12 @@ namespace Shop.api
             );
 
             app.UseAuthentication();
-            app.UseAuthorization();
+            app.UseAuthorization(); 
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"assets")),
+                RequestPath = new PathString("/assets")
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

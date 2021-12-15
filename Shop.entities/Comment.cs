@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema; 
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Shop.entities
 {
@@ -10,6 +10,7 @@ namespace Shop.entities
         public int Id { get; set; }
         public string Content { get; set; }
         public int CustomerId { get; set; }
+        public string Image { get; set; }
         public int BlogId { get; set; }
 
     }

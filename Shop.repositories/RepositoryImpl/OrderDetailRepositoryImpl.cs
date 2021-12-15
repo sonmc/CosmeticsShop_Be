@@ -1,4 +1,6 @@
 ﻿using Shop.entities;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Shop.repositories.RepositoryImpl
 {
@@ -8,6 +10,11 @@ namespace Shop.repositories.RepositoryImpl
         public OrderDetailRepositoryImpl(DataContext context) : base(context)
         {
             this._dbContext = context;
+        }
+
+        public List<OrderDetail> GetByOrderId(int orderId)
+        {
+            return _dbContext.OrderDetails.Where(x => x.OrderId == orderId).ToList();
         }
     }
 }

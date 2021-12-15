@@ -18,7 +18,8 @@ namespace Shop.api.Migrations
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -91,7 +92,8 @@ namespace Shop.api.Migrations
                     IdCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    TotalItems = table.Column<long>(type: "bigint", nullable: false)
+                    TotalItems = table.Column<long>(type: "bigint", nullable: false),
+                    IsDisabled = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -112,6 +114,7 @@ namespace Shop.api.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BlogId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -141,7 +144,8 @@ namespace Shop.api.Migrations
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     CustomerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CustomerPhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    CustomerPhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -196,12 +200,6 @@ namespace Shop.api.Migrations
                         principalTable: "Orders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_OrderDetails_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -216,8 +214,8 @@ namespace Shop.api.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "CategoryId", "CreatedDate", "Description", "Evaluate", "IdCode", "Images", "Link", "ListedPrice", "ModifiedDate", "NameCategory", "NameProduct", "TotalItems" },
-                values: new object[] { 9999, 9999, null, "This is the product default use for create composition", 0, "", "", "", null, null, "", "This is the product default", 0L });
+                columns: new[] { "Id", "CategoryId", "CreatedDate", "Description", "Evaluate", "IdCode", "Images", "IsDisabled", "Link", "ListedPrice", "ModifiedDate", "NameCategory", "NameProduct", "TotalItems" },
+                values: new object[] { 9999, 9999, null, "This is the product default use for create composition", 0, "", "", false, "", null, null, "", "This is the product default", 0L });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_BlogId",
@@ -239,12 +237,6 @@ namespace Shop.api.Migrations
                 name: "IX_OrderDetails_OrderId",
                 table: "OrderDetails",
                 column: "OrderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_OrderDetails_ProductId",
-                table: "OrderDetails",
-                column: "ProductId",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_CustomerId",
@@ -276,16 +268,16 @@ namespace Shop.api.Migrations
                 name: "Blogs");
 
             migrationBuilder.DropTable(
-                name: "Orders");
-
-            migrationBuilder.DropTable(
                 name: "Products");
 
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "Orders");
 
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Customers");
         }
     }
 }

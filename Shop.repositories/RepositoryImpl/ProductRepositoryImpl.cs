@@ -1,4 +1,6 @@
 ﻿using Shop.entities;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Shop.repositories.RepositoryImpl
 {
@@ -9,6 +11,10 @@ namespace Shop.repositories.RepositoryImpl
         {
             this._dbContext = context;
         }
- 
+        
+        public List<Product> GetListProduct()
+        {
+            return _dbContext.Products.Where(x => !x.IsDisabled).ToList();
+        }
     }
 }

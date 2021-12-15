@@ -18,5 +18,6 @@ namespace Shop.services.ServiceImpl
             var user = _repository.Login(username, password);
             return user;
         }
+
     }
 }

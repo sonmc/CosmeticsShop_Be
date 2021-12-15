@@ -12,7 +12,7 @@ using Shop.entities;
 namespace Shop.api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211214182618_FirstMigration")]
+    [Migration("20211215153824_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,9 @@ namespace Shop.api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")
@@ -92,6 +95,9 @@ namespace Shop.api.Migrations
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -181,6 +187,9 @@ namespace Shop.api.Migrations
                     b.Property<string>("OrderCode")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId")
@@ -210,9 +219,6 @@ namespace Shop.api.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.HasIndex("ProductId")
-                        .IsUnique();
-
                     b.ToTable("OrderDetails");
                 });
 
@@ -241,6 +247,9 @@ namespace Shop.api.Migrations
 
                     b.Property<string>("Images")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDisabled")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Link")
                         .HasColumnType("nvarchar(max)");
@@ -275,6 +284,7 @@ namespace Shop.api.Migrations
                             Evaluate = 0,
                             IdCode = "",
                             Images = "",
+                            IsDisabled = false,
                             Link = "",
                             NameCategory = "",
                             NameProduct = "This is the product default",
@@ -369,12 +379,6 @@ namespace Shop.api.Migrations
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Shop.entities.Product", null)
-                        .WithOne("OrderDetail")
-                        .HasForeignKey("Shop.entities.OrderDetail", "ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Shop.entities.Product", b =>
@@ -411,8 +415,6 @@ namespace Shop.api.Migrations
             modelBuilder.Entity("Shop.entities.Product", b =>
                 {
                     b.Navigation("Compositions");
-
-                    b.Navigation("OrderDetail");
                 });
 #pragma warning restore 612, 618
         }

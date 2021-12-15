@@ -1,5 +1,6 @@
 using Shop.entities;
-using Shop.repositories; 
+using Shop.repositories;
+using System.Collections.Generic;
 
 namespace Shop.services.ServiceImpl
 {
@@ -11,6 +12,11 @@ namespace Shop.services.ServiceImpl
         public OrderDetailService(IOrderDetailRepository repository) : base(repository)
         {
             _repository = repository;
-        } 
+        }
+
+        public List<OrderDetail> GetByOrderId(int orderId)
+        {
+            return _repository.GetByOrderId(orderId);
+        }
     }
 }

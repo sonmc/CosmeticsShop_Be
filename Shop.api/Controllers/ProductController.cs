@@ -28,5 +28,15 @@ namespace Shop.api.Controllers
             response.Message = "Success";
             return response;
         }
+
+        [HttpGet("get-all")]
+        public Response GetAll()
+        {
+            var datas = this._productService.GetProduct();
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Data = datas;
+            response.Message = "Success";
+            return response;
+        }
     }
 }

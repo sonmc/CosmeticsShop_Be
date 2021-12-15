@@ -63,8 +63,7 @@ namespace Shop.entities
                     ListedPrice = null,
                     ModifiedDate = null,
                     NameCategory = "",
-                    NameProduct = "This is the product default",
-                    OrderDetail = null,
+                    NameProduct = "This is the product default", 
                     TotalItems = 0,
                 }
             );
