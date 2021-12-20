@@ -8,7 +8,7 @@ namespace Shop.api.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("api/orderDetail")]
+    [Route("api/orderDetails")]
     public class OrderDetailController : GeneralController<OrderDetail, IOrderDetailService>
     {
 

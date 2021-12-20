@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
-using Shop.entities; 
+using Shop.entities;
 using Shop.helpers;
 using Shop.repositories;
 using Shop.repositories.RepositoryImpl;
@@ -72,10 +72,13 @@ namespace Shop.api
             services.AddTransient<IOrderDetailRepository, OrderDetailRepositoryImpl>();
 
             services.AddTransient<IProductService, ProductService>();
-            services.AddTransient<IProductRepository, ProductRepositoryImpl>(); 
+            services.AddTransient<IProductRepository, ProductRepositoryImpl>();
 
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddTransient<ICustomerRepository, CustomerRepositoryImpl>();
+
+            services.AddTransient<ICommentService, CommentService>();
+            services.AddTransient<ICommentRepository, CommentRepositoryImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -91,7 +94,7 @@ namespace Shop.api
             );
 
             app.UseAuthentication();
-            app.UseAuthorization(); 
+            app.UseAuthorization();
             app.UseStaticFiles(new StaticFileOptions()
             {
                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"assets")),

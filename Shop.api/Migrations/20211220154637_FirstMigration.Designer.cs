@@ -12,7 +12,7 @@ using Shop.entities;
 namespace Shop.api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211215153824_FirstMigration")]
+    [Migration("20211220154637_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -96,15 +96,18 @@ namespace Shop.api.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
+                    b.Property<string>("DateCreated")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("BlogId");
-
-                    b.HasIndex("CustomerId")
-                        .IsUnique();
 
                     b.ToTable("Comments");
                 });
@@ -260,9 +263,6 @@ namespace Shop.api.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("NameCategory")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("NameProduct")
                         .HasColumnType("nvarchar(max)");
 
@@ -286,7 +286,6 @@ namespace Shop.api.Migrations
                             Images = "",
                             IsDisabled = false,
                             Link = "",
-                            NameCategory = "",
                             NameProduct = "This is the product default",
                             TotalItems = 0L
                         });
@@ -346,12 +345,6 @@ namespace Shop.api.Migrations
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Shop.entities.Customer", null)
-                        .WithOne("Comment")
-                        .HasForeignKey("Shop.entities.Comment", "CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Shop.entities.Composition", b =>
@@ -402,8 +395,6 @@ namespace Shop.api.Migrations
 
             modelBuilder.Entity("Shop.entities.Customer", b =>
                 {
-                    b.Navigation("Comment");
-
                     b.Navigation("Order");
                 });
 

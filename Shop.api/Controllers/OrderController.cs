@@ -11,26 +11,17 @@ namespace Shop.api.Controllers
     [Route("api/orders")]
     public class OrderController : GeneralController<Order, IOrderService>
     {
-        private readonly IOrderService _orderService;
-        private readonly ICustomerService _customerService;
+        private readonly IOrderService _orderService; 
         private Response response;
         public OrderController(IOrderService orderService, ICustomerService customerService) : base(orderService)
         {
-            _orderService = orderService;
-            _customerService = customerService;
+            _orderService = orderService; 
             response = new Response();
         }
         [HttpGet("get-orders")]
         public Response GetAll()
         {
-            var orders = this._orderService.GetAll();
-            foreach (var item in orders)
-            {
-                var customer = _customerService.Get(item.CustomerId);
-                item.CustomerName = customer.Name;
-                item.CustomerPhoneNumber = customer.PhoneNumber;
-                item.CustomerAddress = customer.Address;
-            }
+            var orders = this._orderService.GetAll(); 
             response.Status = (int)Configs.STATUS_SUCCESS;
             response.Data = orders;
             response.Message = "Success";

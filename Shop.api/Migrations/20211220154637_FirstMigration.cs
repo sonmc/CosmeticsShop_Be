@@ -76,13 +76,36 @@ namespace Shop.api.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Comments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    CustomerId = table.Column<int>(type: "int", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BlogId = table.Column<int>(type: "int", nullable: false),
+                    DateCreated = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Comments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Comments_Blogs_BlogId",
+                        column: x => x.BlogId,
+                        principalTable: "Blogs",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Products",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    NameCategory = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     NameProduct = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Images = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ListedPrice = table.Column<double>(type: "float", nullable: true),
@@ -102,34 +125,6 @@ namespace Shop.api.Migrations
                         name: "FK_Products_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Comments",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CustomerId = table.Column<int>(type: "int", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BlogId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Comments", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Comments_Blogs_BlogId",
-                        column: x => x.BlogId,
-                        principalTable: "Blogs",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Comments_Customers_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Customers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -214,19 +209,13 @@ namespace Shop.api.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "CategoryId", "CreatedDate", "Description", "Evaluate", "IdCode", "Images", "IsDisabled", "Link", "ListedPrice", "ModifiedDate", "NameCategory", "NameProduct", "TotalItems" },
-                values: new object[] { 9999, 9999, null, "This is the product default use for create composition", 0, "", "", false, "", null, null, "", "This is the product default", 0L });
+                columns: new[] { "Id", "CategoryId", "CreatedDate", "Description", "Evaluate", "IdCode", "Images", "IsDisabled", "Link", "ListedPrice", "ModifiedDate", "NameProduct", "TotalItems" },
+                values: new object[] { 9999, 9999, null, "This is the product default use for create composition", 0, "", "", false, "", null, null, "This is the product default", 0L });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_BlogId",
                 table: "Comments",
                 column: "BlogId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Comments_CustomerId",
-                table: "Comments",
-                column: "CustomerId",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Compositions_ProductId",
