@@ -29,6 +29,7 @@ namespace Shop.api.Controllers
             return response;
         }
 
+        [AllowAnonymous]
         [HttpGet("get-all")]
         public Response GetAll()
         {
