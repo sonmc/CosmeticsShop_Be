@@ -1,6 +1,7 @@
 ﻿
 using Shop.entities; 
-using Shop.repositories;  
+using Shop.repositories;
+using System.Collections.Generic;
 
 namespace Shop.services.ServiceImpl
 {
@@ -13,6 +14,10 @@ namespace Shop.services.ServiceImpl
         {
             _repository = repository;
         }
-    
+
+        public List<Order> SearchOrderByCode(string code)
+        {
+            return _repository.SearchOrderByCode(code);
+        }
     }
 }

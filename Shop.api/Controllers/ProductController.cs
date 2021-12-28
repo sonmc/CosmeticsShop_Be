@@ -22,20 +22,19 @@ namespace Shop.api.Controllers
         [HttpPost("add")]
         public Response Create([FromBody] Product product)
         {
-            var data = this._productService.Add(product);
+            var data = _productService.Add(product);
             response.Status = (int)Configs.STATUS_SUCCESS;
             response.Data = data;
             response.Message = "Success";
             return response;
         }
 
-        [AllowAnonymous]
-        [HttpGet("get-all")]
-        public Response GetAll()
+        [HttpGet("getByBrand")]
+        public Response GetByBrand(int brandId)
         {
-            var datas = this._productService.GetProduct();
+            var data = _productService.GetByBrandId(brandId);
             response.Status = (int)Configs.STATUS_SUCCESS;
-            response.Data = datas;
+            response.Data = data;
             response.Message = "Success";
             return response;
         }

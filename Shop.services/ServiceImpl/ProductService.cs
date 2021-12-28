@@ -7,22 +7,24 @@ namespace Shop.services.ServiceImpl
     public class ProductService : GeneralServiceImpl<Product, IProductRepository>, IProductService
     {
         IProductRepository _repository;
-        ICategoryRepository _categoryRepository;
+        IBrandRepository _brandRepository;
 
         public ProductService() { }
-        public ProductService(IProductRepository repository, ICategoryRepository categoryRepository) : base(repository)
+        public ProductService(IProductRepository repository, IBrandRepository brandRepository) : base(repository)
         {
             _repository = repository;
-            _categoryRepository = categoryRepository;
+            _brandRepository = brandRepository;
         }
-        public List<Product> GetProduct()
+
+        public List<Product> GetByBrandId(int brandId)
         {
-            var products = _repository.GetListProduct();
+            var products = _repository.GetByBrandId(brandId);
             foreach (var item in products)
             {
-                item.NameCategory = _categoryRepository.Get(item.CategoryId).Name;
+                item.BrandName = _brandRepository.Get(item.BrandId).Name;
             }
             return products;
         }
+         
     }
 }

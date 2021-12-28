@@ -12,6 +12,5 @@ namespace Shop.entities
         public string Part { get; set; }
         public string Uses { get; set; }
         public string LevelOfIrritation { get; set; }
-        public int ProductId { get; set; }
     }
 }

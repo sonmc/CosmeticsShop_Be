@@ -27,5 +27,15 @@ namespace Shop.api.Controllers
             response.Message = "Success";
             return response;
         }
+        [HttpGet("searchOrderByCode")]
+        public Response SearchOrderByCode(string code)
+        {
+            var orders = this._orderService.SearchOrderByCode(code);
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Data = orders;
+            response.Message = "Success";
+            return response;
+        }
+        
     }
 }

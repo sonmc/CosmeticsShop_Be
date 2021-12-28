@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Shop.constant;
 using Shop.entities;
 using Shop.services;
 
@@ -13,7 +14,7 @@ namespace Shop.api.Controllers
         private ICategoryService _categoryService;
         public CategoryController(ICategoryService categoryService) : base(categoryService)
         {
-            this._categoryService = categoryService;
+            _categoryService = categoryService;
         }
     }
 }

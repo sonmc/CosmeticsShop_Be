@@ -18,6 +18,7 @@ namespace Shop.entities
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Brand> Brands { get; set; }
         public virtual DbSet<Composition> Compositions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -37,34 +38,6 @@ namespace Shop.entities
                     Age = 30,
                     Role = 1,
                     Address = "Hà nội",
-                }
-            );
-            modelBuilder.Entity<Category>().HasData(
-                new Category
-                {
-                    Id = (int)Configs.ID_CATEGORY_DEFAULT,
-                    Name = "CATEGORY DEFAULT",
-                    Description = "This is the category default use for create products",
-                    Products = new List<Product>()
-                }
-            );
-            modelBuilder.Entity<Product>().HasData(
-                new Product
-                {
-                    Id = (int)Configs.ID_PRODUCT_DEFAULT,
-                    Compositions = new List<Composition>(),
-                    CreatedDate = null,
-                    Description = "This is the product default use for create composition",
-                    Evaluate = 0,
-                    CategoryId = (int)Configs.ID_CATEGORY_DEFAULT,
-                    IdCode = "",
-                    Images = "",
-                    Link = "",
-                    ListedPrice = null,
-                    ModifiedDate = null,
-                    NameCategory = "",
-                    NameProduct = "This is the product default", 
-                    TotalItems = 0,
                 }
             );
         }

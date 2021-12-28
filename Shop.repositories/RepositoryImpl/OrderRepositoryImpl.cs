@@ -1,4 +1,6 @@
 ﻿using Shop.entities;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Shop.repositories.RepositoryImpl
 {
@@ -9,6 +11,10 @@ namespace Shop.repositories.RepositoryImpl
         {
             this._dbContext = context;
         }
- 
+
+        public List<Order> SearchOrderByCode(string code)
+        {
+            return _dbContext.Orders.Where(x => x.OrderCode.Equals(code)).ToList();
+        }
     }
 }

@@ -12,9 +12,9 @@ namespace Shop.repositories.RepositoryImpl
             this._dbContext = context;
         }
         
-        public List<Product> GetListProduct()
+        public List<Product> GetByBrandId(int brandId)
         {
-            return _dbContext.Products.Where(x => !x.IsDisabled).ToList();
+            return _dbContext.Products.Where(x => !x.IsDisabled && x.BrandId == brandId).ToList();
         }
     }
 }

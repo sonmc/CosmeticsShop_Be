@@ -5,6 +5,6 @@ namespace Shop.repositories
 {
     public interface IProductRepository : IGeneralRepository<Product>
     {
-        public List<Product> GetListProduct();
+        public List<Product> GetByBrandId(int brandId);
     }
 }

@@ -577,19 +577,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\sonmc\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProjectTryHard\\CosmeticsShop\\CosmeticsShop_Be\\Shop.services\\Shop.services.csproj",
+      "projectUniqueName": "E:\\Projects\\ProjectTryHard\\OnlineShop\\CosmeticsShop_Be\\Shop.services\\Shop.services.csproj",
       "projectName": "Shop.services",
-      "projectPath": "D:\\ProjectTryHard\\CosmeticsShop\\CosmeticsShop_Be\\Shop.services\\Shop.services.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\ProjectTryHard\\CosmeticsShop\\CosmeticsShop_Be\\Shop.services\\obj\\",
+      "projectPath": "E:\\Projects\\ProjectTryHard\\OnlineShop\\CosmeticsShop_Be\\Shop.services\\Shop.services.csproj",
+      "packagesPath": "C:\\Users\\sonmc\\.nuget\\packages\\",
+      "outputPath": "E:\\Projects\\ProjectTryHard\\OnlineShop\\CosmeticsShop_Be\\Shop.services\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sonmc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -603,11 +608,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\ProjectTryHard\\CosmeticsShop\\CosmeticsShop_Be\\Shop.entities\\Shop.entities.csproj": {
-              "projectPath": "D:\\ProjectTryHard\\CosmeticsShop\\CosmeticsShop_Be\\Shop.entities\\Shop.entities.csproj"
+            "E:\\Projects\\ProjectTryHard\\OnlineShop\\CosmeticsShop_Be\\Shop.entities\\Shop.entities.csproj": {
+              "projectPath": "E:\\Projects\\ProjectTryHard\\OnlineShop\\CosmeticsShop_Be\\Shop.entities\\Shop.entities.csproj"
             },
-            "D:\\ProjectTryHard\\CosmeticsShop\\CosmeticsShop_Be\\Shop.repositories\\Shop.repositories.csproj": {
-              "projectPath": "D:\\ProjectTryHard\\CosmeticsShop\\CosmeticsShop_Be\\Shop.repositories\\Shop.repositories.csproj"
+            "E:\\Projects\\ProjectTryHard\\OnlineShop\\CosmeticsShop_Be\\Shop.repositories\\Shop.repositories.csproj": {
+              "projectPath": "E:\\Projects\\ProjectTryHard\\OnlineShop\\CosmeticsShop_Be\\Shop.repositories\\Shop.repositories.csproj"
             }
           }
         }
@@ -636,7 +641,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

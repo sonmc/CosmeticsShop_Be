@@ -41,6 +41,22 @@ namespace Shop.api.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Compositions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Part = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Uses = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LevelOfIrritation = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Compositions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Customers",
                 columns: table => new
                 {
@@ -54,6 +70,28 @@ namespace Shop.api.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Customers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BrandId = table.Column<int>(type: "int", nullable: false),
+                    NameProduct = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Images = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ListedPrice = table.Column<double>(type: "float", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TotalItems = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDisabled = table.Column<bool>(type: "bit", nullable: false),
+                    CompositionId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -100,29 +138,20 @@ namespace Shop.api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "Brands",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    BrandId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    NameProduct = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Images = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ListedPrice = table.Column<double>(type: "float", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Link = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Evaluate = table.Column<int>(type: "int", nullable: false),
-                    IdCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    TotalItems = table.Column<long>(type: "bigint", nullable: false),
-                    IsDisabled = table.Column<bool>(type: "bit", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.PrimaryKey("PK_Brands", x => x.BrandId);
                     table.ForeignKey(
-                        name: "FK_Products_Categories_CategoryId",
+                        name: "FK_Brands_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
@@ -154,29 +183,6 @@ namespace Shop.api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Compositions",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Part = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Uses = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LevelOfIrritation = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProductId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Compositions", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Compositions_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "OrderDetails",
                 columns: table => new
                 {
@@ -198,29 +204,19 @@ namespace Shop.api.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Categories",
-                columns: new[] { "Id", "Description", "Name" },
-                values: new object[] { 9999, "This is the category default use for create products", "CATEGORY DEFAULT" });
-
-            migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Address", "Age", "Email", "Gender", "Password", "Role", "UserName" },
                 values: new object[] { 1, "Hà nội", 30, "admin@gmail.com", 0, "Letmein9x", 1, "Admin" });
 
-            migrationBuilder.InsertData(
-                table: "Products",
-                columns: new[] { "Id", "CategoryId", "CreatedDate", "Description", "Evaluate", "IdCode", "Images", "IsDisabled", "Link", "ListedPrice", "ModifiedDate", "NameProduct", "TotalItems" },
-                values: new object[] { 9999, 9999, null, "This is the product default use for create composition", 0, "", "", false, "", null, null, "This is the product default", 0L });
+            migrationBuilder.CreateIndex(
+                name: "IX_Brands_CategoryId",
+                table: "Brands",
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_BlogId",
                 table: "Comments",
                 column: "BlogId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Compositions_ProductId",
-                table: "Compositions",
-                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderDetails_OrderId",
@@ -232,15 +228,13 @@ namespace Shop.api.Migrations
                 table: "Orders",
                 column: "CustomerId",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_CategoryId",
-                table: "Products",
-                column: "CategoryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Brands");
+
             migrationBuilder.DropTable(
                 name: "Comments");
 
@@ -251,19 +245,19 @@ namespace Shop.api.Migrations
                 name: "OrderDetails");
 
             migrationBuilder.DropTable(
+                name: "Products");
+
+            migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "Blogs");
 
             migrationBuilder.DropTable(
-                name: "Products");
-
-            migrationBuilder.DropTable(
                 name: "Orders");
-
-            migrationBuilder.DropTable(
-                name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "Customers");

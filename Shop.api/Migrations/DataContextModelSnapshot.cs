@@ -50,6 +50,30 @@ namespace Shop.api.Migrations
                     b.ToTable("Blogs");
                 });
 
+            modelBuilder.Entity("Shop.entities.Brand", b =>
+                {
+                    b.Property<int>("BrandId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BrandId"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BrandId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Brands");
+                });
+
             modelBuilder.Entity("Shop.entities.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -67,14 +91,6 @@ namespace Shop.api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 9999,
-                            Description = "This is the category default use for create products",
-                            Name = "CATEGORY DEFAULT"
-                        });
                 });
 
             modelBuilder.Entity("Shop.entities.Comment", b =>
@@ -127,15 +143,10 @@ namespace Shop.api.Migrations
                     b.Property<string>("Part")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Uses")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("Compositions");
                 });
@@ -231,7 +242,10 @@ namespace Shop.api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("BrandId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CompositionId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("CreatedDate")
@@ -240,20 +254,11 @@ namespace Shop.api.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Evaluate")
-                        .HasColumnType("int");
-
-                    b.Property<string>("IdCode")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Images")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDisabled")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Link")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double?>("ListedPrice")
                         .HasColumnType("float");
@@ -264,29 +269,12 @@ namespace Shop.api.Migrations
                     b.Property<string>("NameProduct")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("TotalItems")
-                        .HasColumnType("bigint");
+                    b.Property<int>("TotalItems")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 9999,
-                            CategoryId = 9999,
-                            Description = "This is the product default use for create composition",
-                            Evaluate = 0,
-                            IdCode = "",
-                            Images = "",
-                            IsDisabled = false,
-                            Link = "",
-                            NameProduct = "This is the product default",
-                            TotalItems = 0L
-                        });
                 });
 
             modelBuilder.Entity("Shop.entities.User", b =>
@@ -336,20 +324,20 @@ namespace Shop.api.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Shop.entities.Brand", b =>
+                {
+                    b.HasOne("Shop.entities.Category", null)
+                        .WithMany("Brands")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Shop.entities.Comment", b =>
                 {
                     b.HasOne("Shop.entities.Blog", null)
                         .WithMany("Comments")
                         .HasForeignKey("BlogId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Shop.entities.Composition", b =>
-                {
-                    b.HasOne("Shop.entities.Product", null)
-                        .WithMany("Compositions")
-                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -372,15 +360,6 @@ namespace Shop.api.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Shop.entities.Product", b =>
-                {
-                    b.HasOne("Shop.entities.Category", null)
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Shop.entities.Blog", b =>
                 {
                     b.Navigation("Comments");
@@ -388,7 +367,7 @@ namespace Shop.api.Migrations
 
             modelBuilder.Entity("Shop.entities.Category", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("Brands");
                 });
 
             modelBuilder.Entity("Shop.entities.Customer", b =>
@@ -399,11 +378,6 @@ namespace Shop.api.Migrations
             modelBuilder.Entity("Shop.entities.Order", b =>
                 {
                     b.Navigation("OrderDetails");
-                });
-
-            modelBuilder.Entity("Shop.entities.Product", b =>
-                {
-                    b.Navigation("Compositions");
                 });
 #pragma warning restore 612, 618
         }
