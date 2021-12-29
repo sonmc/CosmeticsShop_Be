@@ -16,6 +16,7 @@ namespace Shop.entities
         public string CustomerAddress { get; set; }
         public string CustomerPhoneNumber { get; set; }
         public string Status { get; set; }
+        [NotMapped]
         public List<OrderDetail> OrderDetails { get; set; }
 
     }

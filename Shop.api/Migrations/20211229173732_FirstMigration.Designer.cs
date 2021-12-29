@@ -12,7 +12,7 @@ using Shop.entities;
 namespace Shop.api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211228171204_FirstMigration")]
+    [Migration("20211229173732_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -206,9 +206,6 @@ namespace Shop.api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId")
-                        .IsUnique();
-
                     b.ToTable("Orders");
                 });
 
@@ -230,8 +227,6 @@ namespace Shop.api.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
 
                     b.ToTable("OrderDetails");
                 });
@@ -344,24 +339,6 @@ namespace Shop.api.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Shop.entities.Order", b =>
-                {
-                    b.HasOne("Shop.entities.Customer", null)
-                        .WithOne("Order")
-                        .HasForeignKey("Shop.entities.Order", "CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Shop.entities.OrderDetail", b =>
-                {
-                    b.HasOne("Shop.entities.Order", null)
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Shop.entities.Blog", b =>
                 {
                     b.Navigation("Comments");
@@ -370,16 +347,6 @@ namespace Shop.api.Migrations
             modelBuilder.Entity("Shop.entities.Category", b =>
                 {
                     b.Navigation("Brands");
-                });
-
-            modelBuilder.Entity("Shop.entities.Customer", b =>
-                {
-                    b.Navigation("Order");
-                });
-
-            modelBuilder.Entity("Shop.entities.Order", b =>
-                {
-                    b.Navigation("OrderDetails");
                 });
 #pragma warning restore 612, 618
         }

@@ -8,6 +8,7 @@ namespace Shop.api.Controllers
 {
     [Authorize]
     [ApiController]
+
     [Route("api/comments")]
     public class CommentController : GeneralController<Comment, ICommentService>
     {
