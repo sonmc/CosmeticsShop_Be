@@ -6,5 +6,6 @@ namespace Shop.services
     public interface IOrderService : IGeneralService<Order>
     {
         List<Order> SearchOrderByCode(string code);
+        Order CreateOrder(Order order);
     }
 }

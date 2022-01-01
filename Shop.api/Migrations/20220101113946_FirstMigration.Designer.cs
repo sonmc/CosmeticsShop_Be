@@ -12,7 +12,7 @@ using Shop.entities;
 namespace Shop.api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211229173732_FirstMigration")]
+    [Migration("20220101113946_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,6 +43,9 @@ namespace Shop.api.Migrations
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -109,16 +112,13 @@ namespace Shop.api.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<string>("DateCreated")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -153,31 +153,6 @@ namespace Shop.api.Migrations
                     b.ToTable("Compositions");
                 });
 
-            modelBuilder.Entity("Shop.entities.Customer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Customers");
-                });
-
             modelBuilder.Entity("Shop.entities.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -204,6 +179,9 @@ namespace Shop.api.Migrations
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("TotalBalance")
+                        .HasColumnType("float");
+
                     b.HasKey("Id");
 
                     b.ToTable("Orders");
@@ -217,13 +195,25 @@ namespace Shop.api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("OrderId")
+                    b.Property<double>("Balance")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ClientIp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DateTrade")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -257,14 +247,14 @@ namespace Shop.api.Migrations
                     b.Property<bool>("IsDisabled")
                         .HasColumnType("bit");
 
-                    b.Property<double?>("ListedPrice")
-                        .HasColumnType("float");
-
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("NameProduct")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.Property<int>("TotalItems")
                         .HasColumnType("int");
@@ -288,6 +278,9 @@ namespace Shop.api.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
+                    b.Property<string>("ClientIp")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -295,6 +288,9 @@ namespace Shop.api.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Role")

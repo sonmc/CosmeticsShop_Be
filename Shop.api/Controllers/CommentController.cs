@@ -25,7 +25,7 @@ namespace Shop.api.Controllers
         [HttpPost("add")]
         public Response Create([FromBody] Comment comment)
         {
-            comment.UserName = userService.Get(comment.UserId).UserName;
+            comment.UserName = userService.Get((int)comment.UserId).UserName;
             comment.DateCreated = DateTime.Now.ToString();
             var data = this.commentService.Add(comment);
             response.Status = (int)Configs.STATUS_SUCCESS;
@@ -34,6 +34,15 @@ namespace Shop.api.Controllers
             return response;
         }
 
+        [HttpGet("getByBlogId")]
+        public Response GetByBlogId(int blogId)
+        {
+            var data = this.commentService.GetByBlogId(blogId);
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Data = data;
+            response.Message = "Success";
+            return response;
+        }
 
     }
 }

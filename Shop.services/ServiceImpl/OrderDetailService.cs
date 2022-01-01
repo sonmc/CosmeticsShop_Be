@@ -14,9 +14,19 @@ namespace Shop.services.ServiceImpl
             _repository = repository;
         }
 
+        public bool CreateOrderDetail(OrderDetail orderDetail)
+        {
+            return _repository.CreateOrderDetail(orderDetail);
+        }
+
         public List<OrderDetail> GetByOrderId(int orderId)
         {
             return _repository.GetByOrderId(orderId);
+        }
+
+        public List<OrderDetail> GetOrderDetail(int? userId, string clientIp)
+        {
+            return _repository.GetOrderDetail(userId, clientIp);
         }
     }
 }

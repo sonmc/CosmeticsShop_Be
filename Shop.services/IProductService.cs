@@ -5,6 +5,7 @@ namespace Shop.services
 {
     public interface IProductService : IGeneralService<Product>
     {
-        public List<Product> GetByBrandId(int brandId); 
+        public List<Product> GetByBrandId(int brandId);
+        public List<Product> GetProduct(int brandId, string dataSearch);
     }
 }

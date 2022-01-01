@@ -72,10 +72,7 @@ namespace Shop.api
             services.AddTransient<IOrderDetailRepository, OrderDetailRepositoryImpl>();
 
             services.AddTransient<IProductService, ProductService>();
-            services.AddTransient<IProductRepository, ProductRepositoryImpl>();
-
-            services.AddTransient<ICustomerService, CustomerService>();
-            services.AddTransient<ICustomerRepository, CustomerRepositoryImpl>();
+            services.AddTransient<IProductRepository, ProductRepositoryImpl>(); 
 
             services.AddTransient<ICommentService, CommentService>();
             services.AddTransient<ICommentRepository, CommentRepositoryImpl>();

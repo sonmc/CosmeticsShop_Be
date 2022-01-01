@@ -13,7 +13,7 @@ namespace Shop.api.Controllers
     {
         private readonly IOrderService _orderService; 
         private Response response;
-        public OrderController(IOrderService orderService, ICustomerService customerService) : base(orderService)
+        public OrderController(IOrderService orderService) : base(orderService)
         {
             _orderService = orderService; 
             response = new Response();
@@ -27,6 +27,8 @@ namespace Shop.api.Controllers
             response.Message = "Success";
             return response;
         }
+
+
         [HttpGet("searchOrderByCode")]
         public Response SearchOrderByCode(string code)
         {

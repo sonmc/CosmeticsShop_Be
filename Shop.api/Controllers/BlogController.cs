@@ -44,7 +44,7 @@ namespace Shop.api.Controllers
             blogDetail.Comments = commentService.GetByBlogId(blogId);
             foreach (var comment in blogDetail.Comments)
             {
-                comment.UserName = userService.Get(comment.UserId).UserName;
+                comment.UserName = userService.Get((int)comment.UserId).UserName;
                 comment.DateCreated = DateTime.Now.ToString();
             }
             response.Status = (int)Configs.STATUS_SUCCESS;

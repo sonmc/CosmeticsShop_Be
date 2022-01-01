@@ -12,9 +12,52 @@ namespace Shop.repositories.RepositoryImpl
             this._dbContext = context;
         }
 
+        public bool CreateOrderDetail(OrderDetail orderDetail)
+        {
+            bool isAdded = false;
+            try
+            {
+                var order = _dbContext.OrderDetails.Where(x => x.ProductId == orderDetail.ProductId).FirstOrDefault();
+                if (order != null)
+                {
+                    order.Quantity = order.Quantity + 1;
+                    _dbContext.OrderDetails.Update(order);
+                    isAdded = true;
+                }
+                else
+                {
+                    orderDetail.Quantity = 1;
+                    _dbContext.OrderDetails.Add(orderDetail);
+
+                    isAdded = true;
+                }
+                _dbContext.SaveChanges();
+            }
+            catch (System.Exception)
+            {
+                isAdded = false;
+            }
+            return isAdded;
+        }
+
         public List<OrderDetail> GetByOrderId(int orderId)
         {
             return _dbContext.OrderDetails.Where(x => x.OrderId == orderId).ToList();
+        }
+
+        public List<OrderDetail> GetOrderDetail(int? userId, string clientIp)
+        {
+            var orderDetails = (from orderDetail in _dbContext.OrderDetails
+                                where orderDetail.UserId == userId || orderDetail.ClientIp.Equals(clientIp)
+                                select orderDetail).ToList();
+            foreach (var orderDetail in orderDetails)
+            {
+                orderDetail.Product = _dbContext.Products.Where(x => x.Id == orderDetail.ProductId).FirstOrDefault();
+                double price = double.Parse(orderDetail.Product.Price.ToString());
+                int quantity = int.Parse(orderDetail.Quantity.ToString());
+                orderDetail.Balance = price * quantity;
+            }
+            return orderDetails;
         }
     }
 }

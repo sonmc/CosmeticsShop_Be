@@ -6,12 +6,12 @@ i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\c
 i:{422e6fe7-7f4c-4660-9be8-d8f4a22ee55d}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.entities\bin\debug\net6.0\shop.entities.dll
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.entities\bin\debug\net6.0\shop.entities.dll
 ++Dependencies
-i:{a68b2bdb-ff7e-47aa-8342-60b00fc1c067}:>1165
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:>1167
-i:{422e6fe7-7f4c-4660-9be8-d8f4a22ee55d}:>1166
-i:{82818f02-83de-447f-8f44-33ea763bb2ef}:>1164
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:>1163
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1685
+i:{a68b2bdb-ff7e-47aa-8342-60b00fc1c067}:>1167
+i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:>1168
+i:{422e6fe7-7f4c-4660-9be8-d8f4a22ee55d}:>1165
+i:{82818f02-83de-447f-8f44-33ea763bb2ef}:>1166
+i:{09aeacfd-896d-441b-95fb-ee847445c80e}:>1169
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1689
 ++Authenticate.cs
 i:{a68b2bdb-ff7e-47aa-8342-60b00fc1c067}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.entities\authenticate.cs
 ++Blog.cs
@@ -24,8 +24,6 @@ i:{a68b2bdb-ff7e-47aa-8342-60b00fc1c067}:e:\projects\projecttryhard\onlineshop\c
 i:{a68b2bdb-ff7e-47aa-8342-60b00fc1c067}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.entities\comment.cs
 ++Composition.cs
 i:{a68b2bdb-ff7e-47aa-8342-60b00fc1c067}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.entities\composition.cs
-++Customer.cs
-i:{a68b2bdb-ff7e-47aa-8342-60b00fc1c067}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.entities\customer.cs
 ++DataContext.cs
 i:{a68b2bdb-ff7e-47aa-8342-60b00fc1c067}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.entities\datacontext.cs
 ++Order.cs
@@ -100,39 +98,17 @@ i:{82818f02-83de-447f-8f44-33ea763bb2ef}:e:\projects\projecttryhard\onlineshop\c
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\microsoft.netcore.app
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\microsoft.netcore.app
 ++Microsoft.EntityFrameworkCore (6.0.0)
-i:{a68b2bdb-ff7e-47aa-8342-60b00fc1c067}:>1729
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1737
+i:{a68b2bdb-ff7e-47aa-8342-60b00fc1c067}:>1738
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1761
 ++Shop.constants
 i:{a68b2bdb-ff7e-47aa-8342-60b00fc1c067}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.constants\bin\debug\net6.0\shop.constants.dll
 i:{00000000-0000-0000-0000-000000000000}:Shop.constants
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.constants\shop.constants.csproj
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.constants\bin\debug\net6.0\shop.constants.dll
 ++Shop.services
 i:{00000000-0000-0000-0000-000000000000}:Shop.services
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\shop.services.csproj
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\bin\debug\net6.0\shop.services.dll
 ++ServiceImpl
 i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\
-++BlogService.cs
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\blogservice.cs
-++BrandService.cs
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\brandservice.cs
-++CategoryService.cs
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\categoryservice.cs
-++CommentService.cs
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\commentservice.cs
-++CompositionService.cs
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\compositionservice.cs
-++CustomerService.cs
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\customerservice.cs
-++GeneralServiceImpl.cs
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\generalserviceimpl.cs
-++OrderDetailService.cs
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\orderdetailservice.cs
-++OrderService.cs
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\orderservice.cs
-++ProductService.cs
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\productservice.cs
-++UserService.cs
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\userservice.cs
 ++IBlogService.cs
 i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\iblogservice.cs
 ++IBrandService.cs
@@ -144,7 +120,6 @@ i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\c
 ++ICompositionService.cs
 i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\icompositionservice.cs
 ++ICustomerService.cs
-i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\icustomerservice.cs
 ++IGeneralService.cs
 i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\igeneralservice.cs
 ++IOrderDetailService.cs
@@ -155,12 +130,33 @@ i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\c
 i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\iproductservice.cs
 ++IUserService.cs
 i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\iuserservice.cs
+++BlogService.cs
+i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\blogservice.cs
+++BrandService.cs
+i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\brandservice.cs
+++CategoryService.cs
+i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\categoryservice.cs
+++CommentService.cs
+i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\commentservice.cs
+++CompositionService.cs
+i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\compositionservice.cs
+++CustomerService.cs
+++GeneralServiceImpl.cs
+i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\generalserviceimpl.cs
+++OrderDetailService.cs
+i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\orderdetailservice.cs
+++OrderService.cs
+i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\orderservice.cs
+++ProductService.cs
+i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\productservice.cs
+++UserService.cs
+i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.services\serviceimpl\userservice.cs
 ++Shop.repositories
 i:{7c8ae7fc-17a0-4283-99f3-34f8b5b960ca}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\bin\debug\net6.0\shop.repositories.dll
 i:{00000000-0000-0000-0000-000000000000}:Shop.repositories
 ++Shop.helpers
 i:{00000000-0000-0000-0000-000000000000}:Shop.helpers
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.helpers\shop.helpers.csproj
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.helpers\bin\debug\net6.0\shop.helpers.dll
 ++AppSettings.cs
 i:{422e6fe7-7f4c-4660-9be8-d8f4a22ee55d}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.helpers\appsettings.cs
 ++ExtensionMethods.cs
@@ -171,7 +167,7 @@ i:{82818f02-83de-447f-8f44-33ea763bb2ef}:e:\projects\projecttryhard\onlineshop\c
 i:{82818f02-83de-447f-8f44-33ea763bb2ef}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.constants\response.cs
 ++Imports
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:>352
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1170
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1172
 ++bin
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\bin\
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\bin\
@@ -180,28 +176,6 @@ i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\c
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\
 ++RepositoryImpl
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\
-++BlogRepositoryImpl.cs
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\blogrepositoryimpl.cs
-++BrandRepository.cs
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\brandrepository.cs
-++CategoryRepositoryImpl.cs
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\categoryrepositoryimpl.cs
-++CommentRepository.cs
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\commentrepository.cs
-++CompositionRepositoryImpl.cs
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\compositionrepositoryimpl.cs
-++CustomerRepositoryImpl.cs
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\customerrepositoryimpl.cs
-++GeneralRepositoryImpl.cs
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\generalrepositoryimpl.cs
-++OrderDetailRepositoryImpl.cs
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\orderdetailrepositoryimpl.cs
-++OrderRepositoryImpl.cs
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\orderrepositoryimpl.cs
-++ProductRepositoryImpl.cs
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\productrepositoryimpl.cs
-++UserRepositoryImpl.cs
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\userrepositoryimpl.cs
 ++IBlogRepository.cs
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\iblogrepository.cs
 ++IBrandRepository.cs
@@ -213,7 +187,6 @@ i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\c
 ++ICompositionRepository.cs
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\icompositionrepository.cs
 ++ICustomerRepository.cs
-i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\icustomerrepository.cs
 ++IGeneralRepository.cs
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\igeneralrepository.cs
 ++IOrderDetailRepository.cs
@@ -251,6 +224,27 @@ i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\c
 ++Shop.repositories.csproj.nuget.g.targets
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\obj\shop.repositories.csproj.nuget.g.targets
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\obj\shop.repositories.csproj.nuget.g.targets
+++BlogRepositoryImpl.cs
+i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\blogrepositoryimpl.cs
+++BrandRepository.cs
+i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\brandrepository.cs
+++CategoryRepositoryImpl.cs
+i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\categoryrepositoryimpl.cs
+++CommentRepository.cs
+i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\commentrepository.cs
+++CompositionRepositoryImpl.cs
+i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\compositionrepositoryimpl.cs
+++CustomerRepositoryImpl.cs
+++GeneralRepositoryImpl.cs
+i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\generalrepositoryimpl.cs
+++OrderDetailRepositoryImpl.cs
+i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\orderdetailrepositoryimpl.cs
+++OrderRepositoryImpl.cs
+i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\orderrepositoryimpl.cs
+++ProductRepositoryImpl.cs
+i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\productrepositoryimpl.cs
+++UserRepositoryImpl.cs
+i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\repositoryimpl\userrepositoryimpl.cs
 ++Microsoft.Common.props
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:c:\program files\microsoft visual studio\2022\community\msbuild\current\microsoft.common.props
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:c:\program files\microsoft visual studio\2022\community\msbuild\current\microsoft.common.props
@@ -279,9 +273,9 @@ i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\c
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\bin\debug\net6.0\
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.repositories\obj\debug\net6.0\
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\bin\debug\net6.0\
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\debug\net6.0\
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\bin\debug\net6.0\runtimes\win-arm\lib\net6.0\
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\bin\debug\net6.0\runtimes\win-arm64\lib\net6.0\
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\debug\net6.0\
 ++Microsoft.NuGet.ImportBefore.props
 i:{09aeacfd-896d-441b-95fb-ee847445c80e}:c:\program files\microsoft visual studio\2022\community\msbuild\current\imports\microsoft.common.props\importbefore\microsoft.nuget.importbefore.props
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:c:\program files\microsoft visual studio\2022\community\msbuild\current\imports\microsoft.common.props\importbefore\microsoft.nuget.importbefore.props
@@ -638,17 +632,11 @@ i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:c:\program files\microsoft visual studi
 ++Shop.api
 i:{00000000-0000-0000-0000-000000000000}:Shop.api
 ++Connected Services 
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1686
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1690
 ++Properties
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\properties\
 ++assets
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\assets\
-++images
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\assets\images\
-++bat-mi-kinh-nghiem-mo-shop-my-pham-online-cho-nguoi-moi-bat-dau-1-1632905477.jpg
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\assets\images\bat-mi-kinh-nghiem-mo-shop-my-pham-online-cho-nguoi-moi-bat-dau-1-1632905477.jpg
-++unnamed.jpg
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\assets\images\unnamed.jpg
 ++Controllers
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\controllers\
 ++BlogController.cs
@@ -663,8 +651,6 @@ i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\c
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\controllers\commoncontroller.cs
 ++CompositionController.cs
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\controllers\compositioncontroller.cs
-++CustomerController.cs
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\controllers\customercontroller.cs
 ++GeneralController.cs
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\controllers\generalcontroller.cs
 ++HomeController.cs
@@ -678,7 +664,6 @@ i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\c
 ++UserController.cs
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\controllers\usercontroller.cs
 ++Migrations
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\migrations\
 ++appsettings.json
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\appsettings.json
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\bin\debug\net6.0\appsettings.json
@@ -687,15 +672,14 @@ i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\c
 ++Startup.cs
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\startup.cs
 ++No service dependencies discovered
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1687
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1691
 ++launchSettings.json
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\properties\launchsettings.json
-++20211228062823_FirstMigration.cs
+++images
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\assets\images\
+++20211230154345_FirstMigration.cs
 ++DataContextModelSnapshot.cs
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\migrations\datacontextmodelsnapshot.cs
 ++Shop.api.csproj.EntityFrameworkCore.targets
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\shop.api.csproj.entityframeworkcore.targets
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\shop.api.csproj.entityframeworkcore.targets
 ++Shop.api.csproj.nuget.dgspec.json
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\shop.api.csproj.nuget.dgspec.json
 ++Shop.api.csproj.nuget.g.props
@@ -732,17 +716,17 @@ i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:c:\program files\dotnet\sdk\6.0.101\sdk
 ++Microsoft.AspNetCore.App
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\microsoft.aspnetcore.app
 ++Microsoft.AspNetCore.Authentication.JwtBearer (6.0.0)
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1741
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1765
 ++Microsoft.EntityFrameworkCore.Design (6.0.0)
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1739
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1763
 ++Microsoft.EntityFrameworkCore.SqlServer (6.0.0)
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1738
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1762
 ++Microsoft.EntityFrameworkCore.Tools (6.0.0)
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1742
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1766
 ++Microsoft.VisualStudio.Web.CodeGeneration.Design (6.0.0)
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1743
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1767
 ++Swashbuckle.AspNetCore (6.2.3)
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1740
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:>1764
 ++Sdk.props (C:\Program Files\dotnet\sdk\6.0.101\Sdks\Microsoft.NET.Sdk\Sdk)
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\sdk\sdk.props
 ++Sdk.props (C:\Program Files\dotnet\sdk\6.0.101\Sdks\Microsoft.NET.Sdk.Razor\Sdk)
@@ -759,7 +743,13 @@ i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:c:\program files\dotnet\sdk\6.0.101\sdk
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web.projectsystem\sdk\sdk.targets
 ++Sdk.targets (C:\Program Files\dotnet\sdk\6.0.101\Sdks\Microsoft.NET.Sdk.Publish\Sdk)
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.publish\sdk\sdk.targets
-++20211228062823_FirstMigration.Designer.cs
+++bat-mi-kinh-nghiem-mo-shop-my-pham-online-cho-nguoi-moi-bat-dau-1-1632905477.jpg
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\assets\images\bat-mi-kinh-nghiem-mo-shop-my-pham-online-cho-nguoi-moi-bat-dau-1-1632905477.jpg
+++son-kem-ysl-216_59353cae0537499b8091eeb63e2b0942.png
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\assets\images\son-kem-ysl-216_59353cae0537499b8091eeb63e2b0942.png
+++unnamed.jpg
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\assets\images\unnamed.jpg
+++20211230154345_FirstMigration.Designer.cs
 ++Sdk.Razor.CurrentVersion.props
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.razor\targets\sdk.razor.currentversion.props
 ++Microsoft.NET.Sdk.Web.ProjectSystem.props
@@ -923,8 +913,8 @@ i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\c
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\bin\debug\net6.0\shop.api.deps.json
 ++Shop.api.dll
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\bin\debug\net6.0\shop.api.dll
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\debug\net6.0\shop.api.dll
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\bin\debug\net6.0\ref\shop.api.dll
+i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\debug\net6.0\shop.api.dll
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\debug\net6.0\ref\shop.api.dll
 ++Shop.api.exe
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\bin\debug\net6.0\shop.api.exe
@@ -991,9 +981,7 @@ i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\c
 ++Shop.api.assets.cache
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\debug\net6.0\shop.api.assets.cache
 ++Shop.api.csproj.AssemblyReference.cache
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\debug\net6.0\shop.api.csproj.assemblyreference.cache
 ++Shop.api.csproj.CopyComplete
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\debug\net6.0\shop.api.csproj.copycomplete
 ++Shop.api.csproj.CoreCompileInputs.cache
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\obj\debug\net6.0\shop.api.csproj.corecompileinputs.cache
 ++Shop.api.csproj.FileListAbsolute.txt
@@ -1274,9 +1262,5 @@ i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\c
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\bin\debug\net6.0\runtimes\win-arm64\lib\net6.0\dotnet-aspnet-codegenerator-design.exe
 ++Microsoft.Web.IISSupport.targets
 i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:c:\program files\microsoft visual studio\2022\community\msbuild\microsoft\visualstudio\managed.web\microsoft.web.iissupport.targets
-++20211228170215_FirstMigration.cs
-++20211228170215_FirstMigration.Designer.cs
-++20211228171204_FirstMigration.cs
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\migrations\20211228171204_firstmigration.cs
-++20211228171204_FirstMigration.Designer.cs
-i:{7bd08c49-b207-4af4-9049-c659d15ec7e7}:e:\projects\projecttryhard\onlineshop\cosmeticsshop_be\shop.api\migrations\20211228171204_firstmigration.designer.cs
+++20211231175351_FirstMigration.cs
+++20211231175351_FirstMigration.Designer.cs

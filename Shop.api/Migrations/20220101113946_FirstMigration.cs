@@ -16,6 +16,7 @@ namespace Shop.api.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<int>(type: "int", nullable: false),
@@ -57,30 +58,18 @@ namespace Shop.api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Customers",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Customers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "OrderDetails",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductId = table.Column<int>(type: "int", nullable: false),
-                    OrderId = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false)
+                    OrderId = table.Column<int>(type: "int", nullable: true),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    Balance = table.Column<double>(type: "float", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    ClientIp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DateTrade = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -98,7 +87,8 @@ namespace Shop.api.Migrations
                     CustomerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerPhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TotalBalance = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -114,7 +104,7 @@ namespace Shop.api.Migrations
                     BrandId = table.Column<int>(type: "int", nullable: false),
                     NameProduct = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Images = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ListedPrice = table.Column<double>(type: "float", nullable: true),
+                    Price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TotalItems = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -136,10 +126,12 @@ namespace Shop.api.Migrations
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Age = table.Column<int>(type: "int", nullable: false),
                     Role = table.Column<int>(type: "int", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Gender = table.Column<int>(type: "int", nullable: false)
+                    Gender = table.Column<int>(type: "int", nullable: false),
+                    ClientIp = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -153,8 +145,7 @@ namespace Shop.api.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    CustomerId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BlogId = table.Column<int>(type: "int", nullable: false),
                     DateCreated = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -193,8 +184,8 @@ namespace Shop.api.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "Address", "Age", "Email", "Gender", "Password", "Role", "UserName" },
-                values: new object[] { 1, "Hà nội", 30, "admin@gmail.com", 0, "Letmein9x", 1, "Admin" });
+                columns: new[] { "Id", "Address", "Age", "ClientIp", "Email", "Gender", "Password", "PhoneNumber", "Role", "UserName" },
+                values: new object[] { 1, "Hà nội", 30, null, "admin@gmail.com", 0, "Letmein9x", null, 1, "Admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Brands_CategoryId",
@@ -217,9 +208,6 @@ namespace Shop.api.Migrations
 
             migrationBuilder.DropTable(
                 name: "Compositions");
-
-            migrationBuilder.DropTable(
-                name: "Customers");
 
             migrationBuilder.DropTable(
                 name: "OrderDetails");

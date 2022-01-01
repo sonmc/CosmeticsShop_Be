@@ -13,25 +13,36 @@ namespace Shop.api.Controllers
         private ICategoryService _categoryService;
         private IProductService _productService;
         private IBrandService _brandService;
-        private ICustomerService _customerService;
         private IOrderService _orderService;
+        private IBlogService _blogService;
+        private ICommentService _commentService;
+        private IUserService _userService;
+        private IOrderDetailService _orderDetailService;
         private Response response;
-        public HomeController(ICategoryService categoryService, IOrderService orderService, ICustomerService customerService,
-            IProductService productService, IBrandService brandService)
+        public HomeController(ICategoryService categoryService, IOrderService orderService,
+            IProductService productService, IBrandService brandService, IBlogService blogService, ICommentService commentService,
+            IUserService userService, IOrderDetailService orderDetailService)
         {
+            _blogService = blogService;
             _categoryService = categoryService;
             _productService = productService;
             _brandService = brandService;
-            _customerService = customerService;
             _orderService = orderService;
+            _commentService = commentService;
+            _userService = userService;
+            _orderDetailService = orderDetailService;
             response = new Response();
         }
 
 
-        [HttpGet("products")]
-        public Response GetProduct(int brandId)
+        [HttpPost("products")]
+        public Response GetProduct(int brandId, string? search)
         {
-            var data = _productService.GetByBrandId(brandId);
+            if (search==null)
+            {
+                search = "";
+            }
+            var data = _productService.GetProduct(brandId, search);
             response.Status = (int)Configs.STATUS_SUCCESS;
             response.Data = data;
             response.Message = "Success";
@@ -58,24 +69,101 @@ namespace Shop.api.Controllers
             return response;
         }
 
-        [HttpPost("create-customer")]
-        public Response CreateCustomer(Customer customer)
+        [HttpPost("create-order")]
+        public Response CreateOrder(Order order)
         {
-            var data = _customerService.Add(customer);
+            var data = _orderService.CreateOrder(order);
             response.Status = (int)Configs.STATUS_SUCCESS;
             response.Data = data;
             response.Message = "Success";
             return response;
         }
 
-        [HttpPost("create-order")]
-        public Response CreateOrder(Order order)
+        [HttpPost("get-order-detail")]
+        public Response GetOrderDetail(int? userId, string clientIp)
         {
-            var data = _orderService.Add(order);
+            var orderDetails = _orderDetailService.GetOrderDetail(userId, clientIp);
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Data = orderDetails;
+            response.Message = "Success";
+            return response;
+        }
+
+        [HttpPost("create-order-detail")]
+        public Response CreateOrder(OrderDetail orderDetail)
+        {
+            orderDetail.DateTrade = DateTime.Now.ToString();
+            var data = _orderDetailService.CreateOrderDetail(orderDetail);
             response.Status = (int)Configs.STATUS_SUCCESS;
             response.Data = data;
             response.Message = "Success";
             return response;
         }
+
+
+        [HttpGet("getBlog")]
+        public Response GetBlog()
+        {
+            var blogs = this._blogService.GetAll();
+            foreach (Blog blog in blogs)
+            {
+                var user = _userService.Get(blog.UserId);
+                blog.Author = user.UserName;
+            }
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Data = blogs;
+            response.Message = "Success";
+            return response;
+        }
+        [HttpGet("getBlogById")]
+        public Response GetById(int blogId)
+        {
+            var blogDetail = this._blogService.Get(blogId);
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Data = blogDetail;
+            response.Message = "Success";
+            return response;
+        }
+
+        [HttpGet("getByBlogId")]
+        public Response GetCommentByBlogId(int blogId)
+        {
+            var comments = this._commentService.GetByBlogId(blogId);
+            foreach (var comment in comments)
+            {
+                comment.UserName = _userService.Get((int)comment.UserId).UserName;
+                comment.DateCreated = DateTime.Now.ToString();
+            }
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Data = comments;
+            response.Message = "Success";
+            return response;
+        }
+
+        [HttpPost("createComment")]
+        public Response CreateComment([FromBody] Comment comment)
+        {
+            var user = _userService.Get((int)comment.UserId);
+            comment.UserName = user.UserName;
+            comment.DateCreated = DateTime.Now.ToString();
+            var data = this._commentService.Add(comment);
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Data = data;
+            response.Message = "Success";
+            return response;
+        }
+
+
+        [HttpPost("create-customer")]
+        public Response CreateCustomer([FromBody] User user)
+        {
+            user.Role = 2; 
+            var data = this._userService.CreateCustomer(user);
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Data = data;
+            response.Message = "Success";
+            return response;
+        }
+  
     }
 }

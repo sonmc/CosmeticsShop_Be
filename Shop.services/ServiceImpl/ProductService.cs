@@ -15,6 +15,15 @@ namespace Shop.services.ServiceImpl
             _repository = repository;
             _brandRepository = brandRepository;
         }
+        public List<Product> GetProduct(int brandId, string dataSearch)
+        {
+            var products = _repository.GetProduct(brandId, dataSearch);
+            foreach (var item in products)
+            {
+                item.BrandName = _brandRepository.Get(item.BrandId).Name;
+            }
+            return products;
+        }
 
         public List<Product> GetByBrandId(int brandId)
         {

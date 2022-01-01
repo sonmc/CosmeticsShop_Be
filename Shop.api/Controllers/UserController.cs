@@ -61,5 +61,54 @@ namespace Shop.api.Controllers
             }
             return response;
         }
+
+        [AllowAnonymous]
+        [HttpPost("register")]
+        public Response Register(User u)
+        {
+            u.Role = 2;
+            var user = _userService.Add(u);
+            if (user == null) { return response; }
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Name, user.Id.ToString())
+                }),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            user.Token = tokenHandler.WriteToken(token);
+
+            response.Data = user.WithoutPassword();
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Message = "Success";
+            return response;
+        }
+
+        [HttpGet("get-customer")]
+        public Response GetCustomer()
+        {
+            var customers = _userService.GetCustomer();
+            response.Data = customers;
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Message = "Success";
+            return response;
+        }
+         
+        [HttpPost("caculator-statistical")]
+        public Response CaculatorStatistical(string dateFrom, string dateTo)
+        {
+             var datas = _userService.CaculatorStatistical(dateFrom, dateTo);
+            response.Data = datas;
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Message = "Success";
+            return response;
+        }
+        
     }
 }
