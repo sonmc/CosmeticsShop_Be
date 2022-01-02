@@ -76,7 +76,7 @@ namespace Shop.repositories.RepositoryImpl
             {
                 var orderDetail = _dbContext.OrderDetails.Where(x => x.ProductId == product.Id).FirstOrDefault();
                 if (orderDetail != null)
-                { 
+                {
                     DateTime dateFrom = DateTime.ParseExact(ConvertDatetime(from), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     DateTime dateTo = DateTime.ParseExact(ConvertDatetime(to), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     DateTime dateTrade = DateTime.ParseExact(ConvertDateTrade(orderDetail.DateTrade), "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -88,9 +88,9 @@ namespace Shop.repositories.RepositoryImpl
                         var statistical = new Statistical();
                         statistical.Product = product.NameProduct;
                         statistical.Brand = GetBrandName(product.BrandId);
-                        statistical.Price = product.Price;
-                        statistical.Inventory = product.TotalItems;
+                        statistical.Price = product.Price; 
                         statistical.SoldQuantity = CalculatorSold(product);
+                        statistical.Inventory = product.TotalItems - CalculatorSold(product);
                         statistical.TotalRevenue = CalculatorRevenue(product);
                         statisticals.Add(statistical);
                     }
@@ -126,7 +126,8 @@ namespace Shop.repositories.RepositoryImpl
             {
                 userResult = _dbContext.Users.Update(user).Entity;
             }
+            _dbContext.SaveChanges();
             return userResult;
-        }
+        } 
     }
 }

@@ -12,7 +12,7 @@ using Shop.entities;
 namespace Shop.api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220101113946_FirstMigration")]
+    [Migration("20220102015205_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -213,6 +213,9 @@ namespace Shop.api.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
 
@@ -231,6 +234,9 @@ namespace Shop.api.Migrations
 
                     b.Property<int>("BrandId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CompositionId")
                         .HasColumnType("int");

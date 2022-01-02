@@ -24,7 +24,7 @@ namespace Shop.services.ServiceImpl
         {
             return _repository.CreateCustomer(user);
         }
-
+ 
         public List<User> GetCustomer()
         {
             var customers = _repository.GetCustomer();

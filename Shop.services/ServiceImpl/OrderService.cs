@@ -25,12 +25,16 @@ namespace Shop.services.ServiceImpl
         }
         public Order CreateOrder(Order order)
         {
+         
+            Order orderAdded = _repository.Add(order);
             foreach (var item in order.OrderDetails)
             {
                 item.Balance = item.Quantity * (double)GetPrice(item.ProductId);
+                item.Status = 2;
+                item.OrderId = orderAdded.Id;
                 _detailRepository.CreateOrderDetail(item);
             }
-            return _repository.Add(order);
+            return orderAdded;
         }
 
         public List<Order> SearchOrderByCode(string code)

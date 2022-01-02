@@ -20,13 +20,14 @@ namespace Shop.repositories.RepositoryImpl
                 var order = _dbContext.OrderDetails.Where(x => x.ProductId == orderDetail.ProductId).FirstOrDefault();
                 if (order != null)
                 {
+                    order.OrderId = orderDetail.OrderId;
+                    order.Status = orderDetail.Status;
                     order.Quantity = order.Quantity + 1;
                     _dbContext.OrderDetails.Update(order);
                     isAdded = true;
                 }
                 else
-                {
-                    orderDetail.Quantity = 1;
+                { 
                     _dbContext.OrderDetails.Add(orderDetail);
 
                     isAdded = true;
@@ -49,6 +50,7 @@ namespace Shop.repositories.RepositoryImpl
         {
             var orderDetails = (from orderDetail in _dbContext.OrderDetails
                                 where orderDetail.UserId == userId || orderDetail.ClientIp.Equals(clientIp)
+                                && orderDetail.Status == 1
                                 select orderDetail).ToList();
             foreach (var orderDetail in orderDetails)
             {

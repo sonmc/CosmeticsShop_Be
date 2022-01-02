@@ -15,7 +15,8 @@ namespace Shop.entities
         public double Balance { get; set; }
         public int? UserId { get; set; }
         public string ClientIp { get; set; }
-        public string DateTrade { get; set; } 
+        public string DateTrade { get; set; }
+        public int Status { get; set; }
         [NotMapped]
         public virtual Product Product { get; set; }
     }

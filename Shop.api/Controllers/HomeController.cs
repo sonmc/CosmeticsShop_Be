@@ -38,11 +38,22 @@ namespace Shop.api.Controllers
         [HttpPost("products")]
         public Response GetProduct(int brandId, string? search)
         {
-            if (search==null)
+            if (search == null)
             {
                 search = "";
             }
             var data = _productService.GetProduct(brandId, search);
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Data = data;
+            response.Message = "Success";
+            return response;
+        }
+
+        [HttpGet("products")]
+        public Response GetProduct(int id)
+        {
+            var data = _productService.Get(id);
+            data.BrandName = _brandService.Get(data.BrandId).Name;
             response.Status = (int)Configs.STATUS_SUCCESS;
             response.Data = data;
             response.Message = "Success";
@@ -92,8 +103,19 @@ namespace Shop.api.Controllers
         [HttpPost("create-order-detail")]
         public Response CreateOrder(OrderDetail orderDetail)
         {
+            orderDetail.Status = 1;
             orderDetail.DateTrade = DateTime.Now.ToString();
             var data = _orderDetailService.CreateOrderDetail(orderDetail);
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Data = data;
+            response.Message = "Success";
+            return response;
+        }
+
+        [HttpGet("delete-order-detail")]
+        public Response CreateOrder(int id)
+        {
+            var data = _orderDetailService.Delete(id);
             response.Status = (int)Configs.STATUS_SUCCESS;
             response.Data = data;
             response.Message = "Success";
@@ -157,13 +179,13 @@ namespace Shop.api.Controllers
         [HttpPost("create-customer")]
         public Response CreateCustomer([FromBody] User user)
         {
-            user.Role = 2; 
+            user.Role = 2;
             var data = this._userService.CreateCustomer(user);
             response.Status = (int)Configs.STATUS_SUCCESS;
             response.Data = data;
             response.Message = "Success";
             return response;
         }
-  
+
     }
 }

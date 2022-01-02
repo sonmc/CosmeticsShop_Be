@@ -13,6 +13,7 @@ namespace Shop.entities
         public int BrandId { get; set; }
         public string NameProduct { get; set; }
         public string Images { get; set; }
+        public string Code { get; set; }
         public double Price { get; set; }
         public string Description { get; set; } 
         public int TotalItems { get; set; }

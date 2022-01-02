@@ -109,6 +109,15 @@ namespace Shop.api.Controllers
             response.Message = "Success";
             return response;
         }
-        
+
+        [HttpGet("deactive")]
+        public Response DeactiveCustomer(int id)
+        {
+            var customers = _userService.Delete(id);
+            response.Data = customers;
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Message = "Success";
+            return response;
+        }
     }
 }

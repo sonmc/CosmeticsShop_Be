@@ -15,6 +15,10 @@ namespace Shop.repositories.RepositoryImpl
 
         public List<Order> SearchOrderByCode(string code)
         {
+            if (string.IsNullOrEmpty(code))
+            {
+                return _dbContext.Orders.ToList();
+            }
             return _dbContext.Orders.Where(x => x.OrderCode.Equals(code)).ToList();
         }
     }

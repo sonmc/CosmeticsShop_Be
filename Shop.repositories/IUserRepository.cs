@@ -8,6 +8,6 @@ namespace Shop.repositories
         User Login(string username, string password);
         List<Statistical> CaculatorStatistical(string from, string to);
         List<User> GetCustomer();
-        User CreateCustomer(User user);
+        User CreateCustomer(User user); 
     }
 }

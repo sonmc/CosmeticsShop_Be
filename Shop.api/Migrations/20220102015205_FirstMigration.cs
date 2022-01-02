@@ -69,7 +69,8 @@ namespace Shop.api.Migrations
                     Balance = table.Column<double>(type: "float", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: true),
                     ClientIp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DateTrade = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    DateTrade = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Status = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -104,6 +105,7 @@ namespace Shop.api.Migrations
                     BrandId = table.Column<int>(type: "int", nullable: false),
                     NameProduct = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Images = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Code = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TotalItems = table.Column<int>(type: "int", nullable: false),

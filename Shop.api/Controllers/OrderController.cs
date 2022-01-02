@@ -30,7 +30,7 @@ namespace Shop.api.Controllers
 
 
         [HttpGet("searchOrderByCode")]
-        public Response SearchOrderByCode(string code)
+        public Response SearchOrderByCode(string? code)
         {
             var orders = this._orderService.SearchOrderByCode(code);
             response.Status = (int)Configs.STATUS_SUCCESS;
