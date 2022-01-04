@@ -18,10 +18,11 @@ namespace Shop.api.Controllers
         private ICommentService _commentService;
         private IUserService _userService;
         private IOrderDetailService _orderDetailService;
+        private ICompositionService _compositionService;
         private Response response;
         public HomeController(ICategoryService categoryService, IOrderService orderService,
             IProductService productService, IBrandService brandService, IBlogService blogService, ICommentService commentService,
-            IUserService userService, IOrderDetailService orderDetailService)
+            IUserService userService, IOrderDetailService orderDetailService, ICompositionService compositionService)
         {
             _blogService = blogService;
             _categoryService = categoryService;
@@ -31,17 +32,14 @@ namespace Shop.api.Controllers
             _commentService = commentService;
             _userService = userService;
             _orderDetailService = orderDetailService;
+            _compositionService = compositionService;
             response = new Response();
         }
 
 
         [HttpPost("products")]
         public Response GetProduct(int brandId, string? search)
-        {
-            if (search == null)
-            {
-                search = "";
-            }
+        { 
             var data = _productService.GetProduct(brandId, search);
             response.Status = (int)Configs.STATUS_SUCCESS;
             response.Data = data;
@@ -52,10 +50,11 @@ namespace Shop.api.Controllers
         [HttpGet("products")]
         public Response GetProduct(int id)
         {
-            var data = _productService.Get(id);
-            data.BrandName = _brandService.Get(data.BrandId).Name;
+            Product product = _productService.Get(id);
+            product.Composition = _compositionService.Get(product.CompositionId).Name;
+            product.BrandName = _brandService.Get(product.BrandId).Name;
             response.Status = (int)Configs.STATUS_SUCCESS;
-            response.Data = data;
+            response.Data = product;
             response.Message = "Success";
             return response;
         }
@@ -113,7 +112,7 @@ namespace Shop.api.Controllers
         }
 
         [HttpGet("delete-order-detail")]
-        public Response CreateOrder(int id)
+        public Response DeleteOrder(int id)
         {
             var data = _orderDetailService.Delete(id);
             response.Status = (int)Configs.STATUS_SUCCESS;

@@ -20,7 +20,7 @@ namespace Shop.repositories.RepositoryImpl
         public string GetComposition(int compositionId)
         {
             Composition composition = _dbContext.Compositions.Where(x => x.Id == compositionId).FirstOrDefault();
-            if(composition == null)
+            if (composition == null)
             {
                 return "";
             }
@@ -30,15 +30,24 @@ namespace Shop.repositories.RepositoryImpl
         {
             List<Product> products = new List<Product>();
             List<Product> productList = _dbContext.Products.Where(_x => _x.BrandId == brandId && !_x.IsDisabled).ToList();
-            foreach (Product product in productList)
-            {
-                if (GetComposition(product.CompositionId).Equals(dataSearch))
-                {
-                    products.Add(product);
-                }
 
+            if (!string.IsNullOrEmpty(dataSearch))
+            {
+                foreach (Product product in productList)
+                {
+                    if (GetComposition(product.CompositionId).Equals(dataSearch))
+                    {
+                        products.Add(product);
+                    }
+
+                }
+                return products;
             }
-            return products;
+            else
+            {
+                return productList;
+            }
+
         }
     }
 }

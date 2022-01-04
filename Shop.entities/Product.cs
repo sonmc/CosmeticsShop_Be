@@ -22,6 +22,8 @@ namespace Shop.entities
         public bool IsDisabled { get; set; }
         public int CompositionId { get; set; } 
         [NotMapped]
+        public string Composition { get; set; }
+        [NotMapped]
         public string BrandName { get; set; }
     }
 }
