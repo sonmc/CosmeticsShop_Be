@@ -88,7 +88,7 @@ namespace Shop.api.Migrations
                     CustomerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerPhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Status = table.Column<int>(type: "int", nullable: false),
                     TotalBalance = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>

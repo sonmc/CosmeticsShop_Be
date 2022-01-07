@@ -38,7 +38,7 @@ namespace Shop.entities
                     Role = 1,
                     Address = "Hà nội",
                 }
-            );
+            ); 
         }
     }
 }
