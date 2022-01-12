@@ -186,5 +186,14 @@ namespace Shop.api.Controllers
             return response;
         }
 
+        [HttpGet("search")]
+        public Response Search(string name)
+        {
+            var data = this._compositionService.GetByName(name);
+            response.Status = (int)Configs.STATUS_SUCCESS;
+            response.Data = data;
+            response.Message = "Success";
+            return response;
+        }
     }
 }
