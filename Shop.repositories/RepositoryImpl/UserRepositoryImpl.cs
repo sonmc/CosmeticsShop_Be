@@ -74,7 +74,7 @@ namespace Shop.repositories.RepositoryImpl
             var statisticals = new List<Statistical>();
             foreach (Product product in products)
             {
-                var orderDetails = _dbContext.OrderDetails.Where(x => x.ProductId == product.Id).ToList();
+                var orderDetails = _dbContext.OrderDetails.Where(x => x.ProductId == product.Id && x.Status == 5).ToList();
                 foreach (var orderDetail in orderDetails)
                 {
 
@@ -91,7 +91,7 @@ namespace Shop.repositories.RepositoryImpl
                         statistical.Brand = GetBrandName(product.BrandId);
                         statistical.Price = product.Price;
                         statistical.SoldQuantity = CalculatorSold(product);
-                        statistical.Inventory =  product.TotalItems - statistical.SoldQuantity;
+                        statistical.Inventory = product.TotalItems - statistical.SoldQuantity;
                         statistical.TotalRevenue = CalculatorRevenue(product);
                         statistical.StatusOrder = orderDetail.Status;
                         statisticals.Add(statistical);

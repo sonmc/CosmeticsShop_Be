@@ -22,13 +22,23 @@ namespace Shop.services.ServiceImpl
         public Order CreateOrder(Order order)
         {
 
-            Order orderAdded = _repository.Add(order);
-            foreach (var item in order.OrderDetails)
+            try
             {
-                item.OrderId = orderAdded.Id;
-                _detailRepository.CreateOrderDetail(item);
+                Order orderAdded = _repository.Add(order);
+                foreach (var item in order.OrderDetails)
+                {
+                    item.DateTrade = DateTime.Now.ToString();
+                    item.OrderId = orderAdded.Id;
+                    _detailRepository.CreateOrderDetail(item);
+                }
+                return orderAdded;
             }
-            return orderAdded;
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+          
         }
 
         public List<Order> SearchOrderByCode(string code)
