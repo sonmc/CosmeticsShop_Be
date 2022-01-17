@@ -66,7 +66,7 @@ namespace Shop.repositories.RepositoryImpl
 
         public List<Product> GetProductByName(int brandId, string dataSearch)
         {
-            List<Product> productList = _dbContext.Products.Where(_x => _x.BrandId == brandId && !_x.IsDisabled && _x.NameProduct.Equals(dataSearch)).ToList();
+            List<Product> productList = _dbContext.Products.Where(_x => _x.BrandId == brandId && !_x.IsDisabled && _x.NameProduct.Contains(dataSearch)).ToList();
             return productList;
         }
     }

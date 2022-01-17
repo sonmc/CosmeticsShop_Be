@@ -12,9 +12,10 @@ namespace Shop.services.ServiceImpl
         IOrderDetailRepository _detailRepository; 
         ICartRepository _cartRepository;
         public OrderService() { }
-        public OrderService(IOrderRepository repository, IOrderDetailRepository orderDetailRepository ) : base(repository)
+        public OrderService(IOrderRepository repository, IOrderDetailRepository orderDetailRepository, ICartRepository cartRepository) : base(repository)
         { 
             _detailRepository = orderDetailRepository;
+            _cartRepository = cartRepository;
             _repository = repository;
         }
 
