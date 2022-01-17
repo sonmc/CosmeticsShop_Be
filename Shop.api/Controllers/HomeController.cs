@@ -54,7 +54,7 @@ namespace Shop.api.Controllers
         public Response GetProduct(int id)
         {
             Product product = _productService.Get(id);
-            product.Composition = _compositionService.Get(product.CompositionId);
+            product.CompositionName = _compositionService.Get(product.CompositionId).Name;
             product.BrandName = _brandService.Get(product.BrandId).Name;
             response.Status = (int)Configs.STATUS_SUCCESS;
             response.Data = product;
@@ -112,10 +112,10 @@ namespace Shop.api.Controllers
             return response;
         }
 
-        [HttpGet("delete-order-detail")]
-        public Response DeleteOrder(int id)
+        [HttpGet("delete-cart")]
+        public Response DeleteCart(int id)
         {
-            var data = _orderDetailService.Delete(id);
+            var data = _cartService.Delete(id);
             response.Status = (int)Configs.STATUS_SUCCESS;
             response.Data = data;
             response.Message = "Success";
