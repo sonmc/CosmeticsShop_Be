@@ -558,23 +558,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sonmc\\.nuget\\packages\\": {},
+    "C:\\Users\\DELL\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\ProjectTryHard\\OnlineShop\\CosmeticsShop_Be\\Shop.repositories\\Shop.repositories.csproj",
+      "projectUniqueName": "G:\\KLTN\\Github\\CosmeticsShop_Be\\Shop.repositories\\Shop.repositories.csproj",
       "projectName": "Shop.repositories",
-      "projectPath": "E:\\Projects\\ProjectTryHard\\OnlineShop\\CosmeticsShop_Be\\Shop.repositories\\Shop.repositories.csproj",
-      "packagesPath": "C:\\Users\\sonmc\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\ProjectTryHard\\OnlineShop\\CosmeticsShop_Be\\Shop.repositories\\obj\\",
+      "projectPath": "G:\\KLTN\\Github\\CosmeticsShop_Be\\Shop.repositories\\Shop.repositories.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "G:\\KLTN\\Github\\CosmeticsShop_Be\\Shop.repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\sonmc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -589,8 +589,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Projects\\ProjectTryHard\\OnlineShop\\CosmeticsShop_Be\\Shop.entities\\Shop.entities.csproj": {
-              "projectPath": "E:\\Projects\\ProjectTryHard\\OnlineShop\\CosmeticsShop_Be\\Shop.entities\\Shop.entities.csproj"
+            "G:\\KLTN\\Github\\CosmeticsShop_Be\\Shop.entities\\Shop.entities.csproj": {
+              "projectPath": "G:\\KLTN\\Github\\CosmeticsShop_Be\\Shop.entities\\Shop.entities.csproj"
             }
           }
         }
