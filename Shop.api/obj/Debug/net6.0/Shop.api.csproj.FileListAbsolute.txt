@@ -266,6 +266,7 @@ E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0
 E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0\Shop.api.AssemblyInfoInputs.cache
 E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0\Shop.api.AssemblyInfo.cs
 E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0\Shop.api.csproj.CoreCompileInputs.cache
+E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0\Shop.api.MvcApplicationPartsAssemblyInfo.cs
 E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0\Shop.api.MvcApplicationPartsAssemblyInfo.cache
 E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0\staticwebassets.build.json
 E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0\staticwebassets.development.json
@@ -275,4 +276,3 @@ E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0
 E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0\ref\Shop.api.dll
 E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0\Shop.api.pdb
 E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0\Shop.api.genruntimeconfig.cache
-E:\Projects\ProjectTryHard\OnlineShop\CosmeticsShop_Be\Shop.api\obj\Debug\net6.0\Shop.api.MvcApplicationPartsAssemblyInfo.cs

@@ -12,8 +12,8 @@ using Shop.entities;
 namespace Shop.api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220116231133_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20220117180549_mig1")]
+    partial class mig1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
