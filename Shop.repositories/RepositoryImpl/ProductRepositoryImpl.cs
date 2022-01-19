@@ -74,7 +74,7 @@ namespace Shop.repositories.RepositoryImpl
             {
                 productList = _dbContext.Products.Where(_x => _x.BrandId == brandId && !_x.IsDisabled && _x.NameProduct.ToUpper().Contains(dataSearch.ToUpper())).ToList();
             }
-
+             
             return productList;
         }
     }
