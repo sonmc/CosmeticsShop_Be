@@ -139,6 +139,7 @@ namespace Shop.api.Controllers
             {
                 var user = _userService.Get(blog.UserId);
                 blog.Author = user.UserName;
+                blog.Comments = _commentService.GetByBlogId(blog.Id);
             }
             response.Status = (int)Configs.STATUS_SUCCESS;
             response.Data = blogs;
